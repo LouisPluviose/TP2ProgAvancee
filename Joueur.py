@@ -12,12 +12,30 @@ class Joueur():
     def ajout(self, p: Personnage.Personnage):
         self.__listePersonnage.append(p)
 
-    def delete(self, index: int = None):
-        self.__listePersonnage.remove(index)
-
-    def getPersonnage(self):
-        return self.__listePersonnage
-
     def getPersonnageIndex(self, index: int = 0):
         return self.__listePersonnage[index]
 
+    def getPersonnageSearch(self, pseudo: str = None):
+        for p in self.__listePersonnage:
+            if p.getPseudo() == pseudo:
+                return p
+    
+    def getPersonnagePerso(self, perso: str=None):
+        for p in self.__listePersonnage:
+            if p.__class__.__name__ == perso:
+                return p
+
+    def deleteIndex(self, index: int = None):
+        self.__listePersonnage.remove(index)
+
+    def deleteSearch(self, pseudo: str = None):
+        for p in self.__listePersonnage:
+            if p.getPseudo() == pseudo:
+                self.__listePersonnage.remove(p)
+
+    def deletePerso(self, perso: str=None):
+        for p in self.__listePersonnage:
+            if p.__class__.__name__ == perso:
+                self.__listePersonnage.remove(p)
+
+    
