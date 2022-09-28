@@ -42,19 +42,22 @@ def main():
 
     # Test Joueurs
     joueur1 = Joueur.Joueur("Martin", listePersonnage=[])
+    joueur2 = Joueur.Joueur("Pierre", listePersonnage=[])
     joueur1.ajout(mage)
     joueur1.ajout(guerrier)
+    joueur2.ajout(mage)
     print(joueur1)
     print(joueur1.getPersonnageIndex(0))
-    #print(joueur1.getPersonnageIndex(1))
+    # print(joueur1.getPersonnageIndex(1))
     print(joueur1.getPersonnageSearch("toto"))
     print(joueur1.getPersonnagePerso("Mage"))
     print(joueur1.afficherListe())
-    print(joueur1.deletePersonnageIndex(1))
-    print(joueur1.deletePersonnageSearch("toto"))
-    print(joueur1.deletePersonnagePerso("Mage"))
+    # print(joueur1.deletePersonnageIndex(1))
+    # print(joueur1.deletePersonnageSearch("toto"))
+    # print(joueur1.deletePersonnagePerso("Mage"))
     joueur1.save()
-    joueur1.load()
+
+    
 
 
 if __name__ == '__main__':

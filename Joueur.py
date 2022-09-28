@@ -57,8 +57,12 @@ class Joueur():
 
     # save and load in json
     def save(self):
-        with open('save.json', 'w') as outfile:
-            json.dump(self.__dict__, outfile)
+        # serialization
+        output = json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
+        # output
+        with open("save.json", "w") as f:
+            f.write(output)
+            f.close()
 
     def load(self):
         with open('save.json', 'r') as infile:
