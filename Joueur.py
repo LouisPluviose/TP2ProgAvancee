@@ -10,7 +10,10 @@ class Joueur():
         return f"Le joueur {self.__nom} prossède ces personnages suivants : {self.__listePersonnage}"
 
     def ajout(self, p: Personnage.Personnage):
-        self.__listePersonnage.append(p)
+        if len(self.__listePersonnage) > 5:
+            print("Vous avez atteint le nombre maximum de personnage")
+        else:
+            self.__listePersonnage.append(p)
 
     def getPersonnageIndex(self, index: int = 0):
         return self.__listePersonnage[index]
@@ -25,17 +28,26 @@ class Joueur():
             if p.__class__.__name__ == perso:
                 return p
 
-    def deleteIndex(self, index: int = None):
-        self.__listePersonnage.remove(index)
+    def afficherListe(self):
+        for p in self.__listePersonnage:
+            print(p)
 
-    def deleteSearch(self, pseudo: str = None):
+    def deletePersonnageIndex(self, index: int):
+        if index < len(self.__listePersonnage):
+            self.__listePersonnage.pop(index)
+            print(f"Le personnage {index} a été supprimé")
+
+    def deletePersonnageSearch(self, pseudo: str = None):
         for p in self.__listePersonnage:
             if p.getPseudo() == pseudo:
+                print(f"Le personnage {pseudo} a été supprimé")
                 self.__listePersonnage.remove(p)
 
-    def deletePerso(self, perso: str=None):
+    def deletePersonnagePerso(self, perso: str = None):
         for p in self.__listePersonnage:
             if p.__class__.__name__ == perso:
+                print(f"Le personnage {perso} a été supprimé")
                 self.__listePersonnage.remove(p)
+
 
     

@@ -40,13 +40,19 @@ def main():
 
     #print(Personnage.Personnage.combat(guerrier, mage))
 
+    # Test Joueurs
     joueur1 = Joueur.Joueur("Martin", listePersonnage=[])
     joueur1.ajout(mage)
     joueur1.ajout(guerrier)
     print(joueur1)
-    print(joueur1.getPersonnage())
     print(joueur1.getPersonnageIndex(0))
-    print(joueur1.getPersonnageIndex(1))
+    #print(joueur1.getPersonnageIndex(1))
+    print(joueur1.getPersonnageSearch("toto"))
+    print(joueur1.getPersonnagePerso("Mage"))
+    print(joueur1.afficherListe())
+    print(joueur1.deletePersonnageIndex(1))
+    print(joueur1.deletePersonnageSearch("toto"))
+    print(joueur1.deletePersonnagePerso("Mage"))
 
 
 if __name__ == '__main__':
