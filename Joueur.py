@@ -17,6 +17,8 @@ class Joueur():
         else:
             self.__listePersonnage.append(p)
 
+    # afficher les stats de tout les personnages
+
     def getPersonnageIndex(self, index: int = 0):
         return self.__listePersonnage[index]
 
@@ -33,6 +35,8 @@ class Joueur():
     def afficherListe(self):
         for p in self.__listePersonnage:
             print(p)
+
+    # supprimer un ou des personnages
 
     def deletePersonnageIndex(self, index: int):
         if index < len(self.__listePersonnage):
