@@ -1,4 +1,6 @@
 import Personnage as Personnage
+import pickle
+import json
 
 
 class Joueur():
@@ -49,5 +51,11 @@ class Joueur():
                 print(f"Le personnage {perso} a été supprimé")
                 self.__listePersonnage.remove(p)
 
+    # save and load in json
+    def save(self):
+        with open('save.json', 'w') as outfile:
+            json.dump(self.__dict__, outfile)
 
-    
+    def load(self):
+        with open('save.json', 'r') as infile:
+            self.__dict__ = json.load(infile)

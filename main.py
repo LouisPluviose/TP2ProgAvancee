@@ -53,6 +53,8 @@ def main():
     print(joueur1.deletePersonnageIndex(1))
     print(joueur1.deletePersonnageSearch("toto"))
     print(joueur1.deletePersonnagePerso("Mage"))
+    joueur1.save()
+    joueur1.load()
 
 
 if __name__ == '__main__':
